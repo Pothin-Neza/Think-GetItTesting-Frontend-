@@ -1,0 +1,39 @@
+target/
+!Think-GetItTesting-Frontend-/.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+
+### IntelliJ IDEA ###
+Think-GetItTesting-Frontend-/.idea/modules.xml
+Think-GetItTesting-Frontend-/.idea/jarRepositories.xml
+Think-GetItTesting-Frontend-/.idea/compiler.xml
+Think-GetItTesting-Frontend-/.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
