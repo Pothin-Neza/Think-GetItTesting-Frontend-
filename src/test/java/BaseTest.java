@@ -20,7 +20,11 @@ public class BaseTest {
 
     @After
     public void closeBrowser() {
-        browser.close();
-        playwright.close();
+        if (browser != null) {
+            browser.close();
+        }
+        if (playwright != null) {
+            playwright.close();
+        }
     }
 }
