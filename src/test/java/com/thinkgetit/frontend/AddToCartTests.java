@@ -2,6 +2,7 @@ package com.thinkgetit.frontend;
 
 import com.project.config.AppConfig;
 import com.project.pages.AddToCartPage;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
@@ -11,15 +12,14 @@ public class AddToCartTests extends BaseTest {
     @Before
     public void loginAndGoToCatalog() {
         page.navigate(AppConfig.BASE_URL + AppConfig.homePage);
-        String viewAllButton = "//*[@id=\"root\"]/div[1]/main/div/section[3]/div[1]/a";
+//        String viewAllButton = "//*[@id=\"root\"]/div[1]/main/div/section[3]/div[1]/a";
+        String ShopNowButton = "//*[@id=\"root\"]/div[1]/main/div/section[1]/div[2]/div/div[2]/a[1]";
         String ElectronicsCategory = "//*[@id=\"root\"]/div[1]/main/div/div[2]/aside/div/div[2]/div[1]/div/button[4]";
-        page.locator(viewAllButton).click();
+        page.locator(ShopNowButton).click();
         page.locator(ElectronicsCategory).click();
         // LoginPage loginPage = new LoginPage(page);
         // loginPage.login(AppConfig.Email, AppConfig.PASSWORD);
 
-        // Standard wait step to let the home page dashboard load
-        page.locator("//*[@id='root']/div[1]/main/div/section[3]/div[1]/a").waitFor();
     }
 
     @Test
@@ -27,7 +27,6 @@ public class AddToCartTests extends BaseTest {
         AddToCartPage addToCartPage = new AddToCartPage(page);
         String productToTest = "Smart Wi-Fi Power Plug";
 
-        // Now passing the parameter dynamically instead of using a hardcoded method slot
         addToCartPage.clickProduct(productToTest);
 
 //        addToCartPage.selectSize("L");
@@ -35,10 +34,10 @@ public class AddToCartTests extends BaseTest {
         addToCartPage.clickAddToCart();
         addToCartPage.viewCart();
 
-        // Dynamic Verification Assertion
-        org.junit.Assert.assertTrue(
+        Assert.assertTrue(
                 "Expected product '" + productToTest + "' was not found inside the cart list!",
                 addToCartPage.isProductInCartList(productToTest)
         );
+        page.waitForTimeout(2000);
     }
 }

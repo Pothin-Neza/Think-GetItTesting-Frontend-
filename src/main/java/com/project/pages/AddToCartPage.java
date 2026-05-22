@@ -11,8 +11,12 @@ public class AddToCartPage {
         this.page = page;
     }
 
+    public void clickShopNowButton(){
+        String ShopNowButton = "//*[@id=\"root\"]/div[1]/main/div/section[1]/div[2]/div/div[2]/a[1]";
+        page.locator(ShopNowButton).click();
+    }
+
     public void clickProduct(String productName) {
-        // This targets the specific h3 text heading within the card structure
         String productHeadingSelector = "h3:has-text('" + productName + "')";
         page.locator(productHeadingSelector).first().click();
     }
@@ -27,7 +31,8 @@ public class AddToCartPage {
     }
 
     public void clickAddToCart(){
-        String addToCartButton = "//*[@id=\"root\"]/div[1]/main/div/div[2]/div[2]/div[7]/button[1]";
+        String addToCartButton = "//*[@id=\"root\"]/div[1]/main/div/div[2]/div[2]/div[6]/button[1]";
+
         page.locator(addToCartButton).click();
     }
 
