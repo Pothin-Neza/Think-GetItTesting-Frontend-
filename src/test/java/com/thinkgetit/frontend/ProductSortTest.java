@@ -1,7 +1,8 @@
+package com.thinkgetit.frontend;
+
 import com.project.config.AppConfig;
 import com.project.pages.LoginPage;
 import com.project.pages.ProductBrowsingPage;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
