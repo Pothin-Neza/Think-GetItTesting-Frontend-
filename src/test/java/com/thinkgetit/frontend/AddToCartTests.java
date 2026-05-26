@@ -27,10 +27,8 @@ public class AddToCartTests extends BaseTest {
         AddToCartPage addToCartPage = new AddToCartPage(page);
         String productToTest = "Smart Wi-Fi Power Plug";
 
-        // Now passing the parameter dynamically instead of using a hardcoded method slot
         addToCartPage.clickProduct(productToTest);
 
-//        addToCartPage.selectSize("L");
         addToCartPage.selectColor("Black");
         addToCartPage.clickAddToCart();
         addToCartPage.viewCart();

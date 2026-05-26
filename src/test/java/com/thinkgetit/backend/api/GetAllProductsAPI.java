@@ -5,15 +5,7 @@ import com.thinkgetit.backend.routes.Routes;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class ProductApi extends BaseTest {
-
-    // GET /products/trending
-    public static Response getTrendingProducts() {
-        return RestAssured.given()
-                .spec(requestSpec)
-                .when()
-                .get(Routes.GET_TRENDING);
-    }
+public class GetAllProductsAPI extends BaseTest {
 
     public static Response getProducts(String sortOrder, int limit) {
         return RestAssured.given()
