@@ -9,5 +9,14 @@ import static org.hamcrest.Matchers.*;
 
 public class ProductApiTests extends BaseApi {
 
+    @Test
+    public void verifyTrendingProductsWithSpecs() {
+        Response response = ProductTrendingApi.getTrendingProducts();
 
+        response.prettyPrint();
+
+        response.then()
+                .spec(successResponseSpec)
+                .body("data.name", hasItem("Cargo Utility Shorts"));
+    }
 }
