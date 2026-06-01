@@ -15,10 +15,7 @@ public class AddToCartTests extends BaseTest {
         String ElectronicsCategory = "//*[@id=\"root\"]/div[1]/main/div/div[2]/aside/div/div[2]/div[1]/div/button[4]";
         page.locator(viewAllButton).click();
         page.locator(ElectronicsCategory).click();
-        // LoginPage loginPage = new LoginPage(page);
-        // loginPage.login(AppConfig.Email, AppConfig.PASSWORD);
 
-        // Standard wait step to let the home page dashboard load
         page.locator("//*[@id='root']/div[1]/main/div/section[3]/div[1]/a").waitFor();
     }
 
@@ -27,7 +24,6 @@ public class AddToCartTests extends BaseTest {
         AddToCartPage addToCartPage = new AddToCartPage(page);
         String productToTest = "Smart Wi-Fi Power Plug";
 
-        // Now passing the parameter dynamically instead of using a hardcoded method slot
         addToCartPage.clickProduct(productToTest);
 
 //        addToCartPage.selectSize("L");
@@ -35,7 +31,7 @@ public class AddToCartTests extends BaseTest {
         addToCartPage.clickAddToCart();
         addToCartPage.viewCart();
 
-        // Dynamic Verification Assertion
+
         org.junit.Assert.assertTrue(
                 "Expected product '" + productToTest + "' was not found inside the cart list!",
                 addToCartPage.isProductInCartList(productToTest)
