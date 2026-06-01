@@ -1,3 +1,7 @@
+/**
+ * RegisterApi class to handle user registration API calls.
+ */
+
 package com.thinkgetit.backend.api;
 
 import com.thinkgetit.backend.pojo.RegisterPayload;

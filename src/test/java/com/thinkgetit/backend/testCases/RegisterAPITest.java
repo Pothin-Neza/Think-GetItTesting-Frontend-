@@ -5,6 +5,7 @@ import com.thinkgetit.backend.base.BaseTest;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static org.hamcrest.Matchers.*;
+// A test class to verify user registration functionality of the API.
 
 public class RegisterAPITest extends BaseTest {
 

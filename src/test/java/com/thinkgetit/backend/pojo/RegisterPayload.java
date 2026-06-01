@@ -2,6 +2,10 @@ package com.thinkgetit.backend.pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ POJO representation of the registration request payload.
+ */
+
 public class RegisterPayload {
 
     @JsonProperty("firstName")
