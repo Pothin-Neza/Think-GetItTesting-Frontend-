@@ -1,3 +1,5 @@
+package com.thinkgetit.frontend;
+
 import com.project.config.AppConfig;
 import com.project.pages.LoginPage;
 import org.junit.Test;
