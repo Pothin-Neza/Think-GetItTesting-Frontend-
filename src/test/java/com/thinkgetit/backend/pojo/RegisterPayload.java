@@ -18,6 +18,7 @@ public class RegisterPayload {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+
     }
 
     public String getFirstName() { return firstName; }

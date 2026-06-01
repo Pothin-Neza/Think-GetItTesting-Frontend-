@@ -15,5 +15,6 @@ public class RegisterApi extends BaseApi {
                 .body(payload)
                 .when()
                 .post(Routes.Register);
+
     }
 }

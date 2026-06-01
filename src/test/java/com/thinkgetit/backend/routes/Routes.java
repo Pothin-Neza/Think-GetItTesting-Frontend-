@@ -1,6 +1,7 @@
 package com.thinkgetit.backend.routes;
 
 public class Routes {
+
     public static final String BASE_URL = "https://think-and-get-it-production.up.railway.app/api/v1";
 
     public static final String GET_TRENDING = "/products/trending";

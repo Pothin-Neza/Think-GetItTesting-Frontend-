@@ -21,5 +21,6 @@ public class RegisterAPITest extends BaseTest {
                 .statusCode(201)
                 .body("success", is(true))
                 .body("data.user.id", notNullValue());
+
     }
 }
