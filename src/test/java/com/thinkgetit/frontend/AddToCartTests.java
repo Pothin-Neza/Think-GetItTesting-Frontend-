@@ -4,7 +4,6 @@ import com.project.config.AppConfig;
 import com.project.pages.AddToCartPage;
 import org.junit.Before;
 import org.junit.Test;
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class AddToCartTests extends BaseTest {
 
@@ -15,10 +14,6 @@ public class AddToCartTests extends BaseTest {
         String ElectronicsCategory = "//*[@id=\"root\"]/div[1]/main/div/div[2]/aside/div/div[2]/div[1]/div/button[4]";
         page.locator(viewAllButton).click();
         page.locator(ElectronicsCategory).click();
-        // LoginPage loginPage = new LoginPage(page);
-        // loginPage.login(AppConfig.Email, AppConfig.PASSWORD);
-
-        // Standard wait step to let the home page dashboard load
         page.locator("//*[@id='root']/div[1]/main/div/section[3]/div[1]/a").waitFor();
     }
 

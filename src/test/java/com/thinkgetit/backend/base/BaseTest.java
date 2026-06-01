@@ -17,7 +17,7 @@ public class BaseTest {
     public static void setupSpecifications() {
         requestSpec = new RequestSpecBuilder()
                 .setBaseUri(Routes.BASE_URL)
-                .addHeader("Accept", "application/json") // Tells the server we want JSON back
+                .addHeader("Accept", "application/json")
                 .build();
 
         successResponseSpec = new ResponseSpecBuilder()
