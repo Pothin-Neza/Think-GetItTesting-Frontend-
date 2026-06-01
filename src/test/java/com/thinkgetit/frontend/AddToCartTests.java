@@ -14,6 +14,7 @@ public class AddToCartTests extends BaseTest {
         String ElectronicsCategory = "//*[@id=\"root\"]/div[1]/main/div/div[2]/aside/div/div[2]/div[1]/div/button[4]";
         page.locator(viewAllButton).click();
         page.locator(ElectronicsCategory).click();
+
         page.locator("//*[@id='root']/div[1]/main/div/section[3]/div[1]/a").waitFor();
     }
 
@@ -28,7 +29,7 @@ public class AddToCartTests extends BaseTest {
         addToCartPage.clickAddToCart();
         addToCartPage.viewCart();
 
-        // Dynamic Verification Assertion
+
         org.junit.Assert.assertTrue(
                 "Expected product '" + productToTest + "' was not found inside the cart list!",
                 addToCartPage.isProductInCartList(productToTest)
