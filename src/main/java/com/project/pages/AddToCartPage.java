@@ -12,7 +12,6 @@ public class AddToCartPage {
     }
 
     public void clickProduct(String productName) {
-        // This targets the specific h3 text heading within the card structure
         String productHeadingSelector = "h3:has-text('" + productName + "')";
         page.locator(productHeadingSelector).first().click();
     }

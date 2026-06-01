@@ -8,6 +8,6 @@ public class BaseApi extends BaseTest {
 
     protected static RequestSpecification getDefaultRequest() {
         return RestAssured.given()
-                .spec(requestSpec); // Reuses the global config rulebook from BaseTest
+                .spec(requestSpec);
     }
 }
