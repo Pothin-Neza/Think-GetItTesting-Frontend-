@@ -1,6 +1,6 @@
 package com.thinkgetit.backend.testCases;
 
-import com.thinkgetit.backend.api.RegisterApi;
+import com.thinkgetit.backend.api.AuthApi;
 import com.thinkgetit.backend.base.BaseTest;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -13,7 +13,7 @@ public class RegisterAPITest extends BaseTest {
     public void verifyUserCanRegisterSuccessfully() {
         String uniqueEmail = "tester_" + System.currentTimeMillis() + "@othin.com";
 
-        Response response = RegisterApi.registerUser("John", "Doe", uniqueEmail, "SecurePassword123");
+        Response response = AuthApi.registerUser("John", "Doe", uniqueEmail, "SecurePassword123");
 
         System.out.println("\n SERVER RESPONSE PAYLOAD ");
         response.prettyPrint();
