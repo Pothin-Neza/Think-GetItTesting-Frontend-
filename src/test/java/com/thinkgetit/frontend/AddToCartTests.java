@@ -4,7 +4,6 @@ import com.project.config.AppConfig;
 import com.project.pages.AddToCartPage;
 import org.junit.Before;
 import org.junit.Test;
-import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class AddToCartTests extends BaseTest {
 

@@ -27,6 +27,7 @@ public class BaseTest {
         }
         if (playwright != null) {
             playwright.close();
+
         }
     }
 }
