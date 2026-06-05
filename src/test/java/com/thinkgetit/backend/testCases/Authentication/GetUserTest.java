@@ -1,5 +1,6 @@
 package com.thinkgetit.backend.testCases.Authentication;
 
+import com.thinkgetit.backend.Utilities.Utils;
 import com.thinkgetit.backend.api.AuthApi;
 import com.thinkgetit.backend.base.BaseTest;
 import io.restassured.response.Response;
@@ -10,7 +11,7 @@ public class GetUserTest extends BaseTest {
 
     @Test
     public void verifyAuthenticatedUserCanFetchOwnProfileDetails() {
-        String uniqueEmail = "profile_" + System.currentTimeMillis() + "@othin.com";
+        String uniqueEmail = Utils.generateUniqueEmail("Profile");
 
         Response regResponse = AuthApi.registerUser("Alex", "Jones", uniqueEmail, "SecurePass123!");
         regResponse.then().statusCode(201);
