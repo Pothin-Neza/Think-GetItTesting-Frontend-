@@ -1,8 +1,7 @@
 
 package com.thinkgetit.backend.api;
 
-import com.thinkgetit.backend.pojo.LoginPayload;
-import com.thinkgetit.backend.pojo.RegisterPayload;
+import com.thinkgetit.backend.pojo.*;
 import com.thinkgetit.backend.routes.Routes;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -43,5 +42,36 @@ public class AuthApi extends BaseApi {
                 .body(payload)
                 .when()
                 .post(Routes.LOGIN);
+    }
+
+    public static Response refreshSession(String refreshToken) {
+        TokenRefreshPayload payload = new TokenRefreshPayload(refreshToken);
+
+        return getDefaultRequest()
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .when()
+                .post(Routes.REFRESH_TOKEN);
+    }
+
+    public static Response requestPasswordReset(String email) {
+        ForgotPasswordPayload payload = new ForgotPasswordPayload(email);
+
+        return getDefaultRequest()
+                .contentType(ContentType.JSON)
+                .body(payload)
+                .when()
+                .post(Routes.FORGOT_PASSWORD);
+    }
+
+    public static Response resetPassword(String token, String newPassword) {
+        ResetPasswordPayload payload = new ResetPasswordPayload(newPassword);
+
+        return getDefaultRequest()
+                .contentType(ContentType.JSON)
+                .pathParam("token", token)
+                .body(payload)
+                .when()
+                .post(Routes.RESET_PASSWORD);
     }
 }
