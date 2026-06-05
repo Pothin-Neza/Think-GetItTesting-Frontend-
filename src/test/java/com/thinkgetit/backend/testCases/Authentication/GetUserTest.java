@@ -1,4 +1,4 @@
-package com.thinkgetit.backend.testCases;
+package com.thinkgetit.backend.testCases.Authentication;
 
 import com.thinkgetit.backend.api.AuthApi;
 import com.thinkgetit.backend.base.BaseTest;

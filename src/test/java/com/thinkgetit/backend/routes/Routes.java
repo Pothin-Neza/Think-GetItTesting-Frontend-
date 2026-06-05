@@ -13,6 +13,7 @@ public class Routes {
     public static final String REFRESH_TOKEN = "/auth/refresh";
     public static final String FORGOT_PASSWORD = "/auth/forgot-password";
     public static final String RESET_PASSWORD = "/auth/reset-password/{token}";
-//    public static final String GET_FLASH_SALES = "/products/flash-sale";
-//    public static final String GET_CATEGORIES = "/categories";
+    public static final String UPDATE_PROFILE = "/users/profile";
+    public static final String UPLOAD_AVATAR = "/users/avatar";
+
 }

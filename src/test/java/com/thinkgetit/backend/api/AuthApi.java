@@ -69,7 +69,7 @@ public class AuthApi extends BaseApi {
 
         return getDefaultRequest()
                 .contentType(ContentType.JSON)
-                .pathParam("token", token) // Dynamically swaps {token} in the route with our variable
+                .pathParam("token", token)
                 .body(payload)
                 .when()
                 .post(Routes.RESET_PASSWORD);
