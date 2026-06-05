@@ -1,5 +1,6 @@
 package com.thinkgetit.backend.testCases.Users;
 
+import com.thinkgetit.backend.Utilities.Utils;
 import com.thinkgetit.backend.api.AuthApi;
 import com.thinkgetit.backend.api.UserApi;
 import com.thinkgetit.backend.base.BaseTest;
@@ -11,8 +12,8 @@ public class UpdateProfileAPITest extends BaseTest {
 
     @Test
     public void verifyUserCanSuccessfullyUpdateTheirProfileDetails() {
-        String uniqueEmail = "profile_" + System.currentTimeMillis() + "@othin.com";
-        String initialPassword = "SecurePassword123!";
+        String uniqueEmail = Utils.generateUniqueEmail("johnny.bravo");
+        String initialPassword = Utils.generateSecurePassword();
 
         AuthApi.registerUser("Johnny", "Bravo", uniqueEmail, initialPassword).then().statusCode(201);
 

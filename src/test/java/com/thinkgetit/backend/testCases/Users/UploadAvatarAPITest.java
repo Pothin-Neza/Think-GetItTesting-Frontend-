@@ -1,5 +1,6 @@
 package com.thinkgetit.backend.testCases.Users;
 
+import com.thinkgetit.backend.Utilities.Utils;
 import com.thinkgetit.backend.api.AuthApi;
 import com.thinkgetit.backend.api.UserApi;
 import com.thinkgetit.backend.base.BaseTest;
@@ -14,8 +15,8 @@ public class UploadAvatarAPITest extends BaseTest {
 
     @Test
     public void verifyUserCanSuccessfullyUploadAvatarImage() throws IOException {
-        String uniqueEmail = "avatar_" + System.currentTimeMillis() + "@othin.com";
-        String password = "SecurePassword123!";
+        String uniqueEmail = Utils.generateUniqueEmail("avatar_");
+        String password = Utils.generateSecurePassword();
 
         AuthApi.registerUser("Tony", "Stark", uniqueEmail, password).then().statusCode(201);
         String accessToken = AuthApi.loginUser(uniqueEmail, password).jsonPath().getString("data.token");
