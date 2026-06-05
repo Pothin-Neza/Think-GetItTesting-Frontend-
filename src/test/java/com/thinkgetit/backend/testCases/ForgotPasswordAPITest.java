@@ -2,7 +2,7 @@ package com.thinkgetit.backend.testCases;
 
 import com.thinkgetit.backend.api.AuthApi;
 import com.thinkgetit.backend.base.BaseTest;
-import com.thinkgetit.backend.Utilities.Utils; // Imported your utils package
+import com.thinkgetit.backend.Utilities.Utils;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static org.hamcrest.Matchers.*;
