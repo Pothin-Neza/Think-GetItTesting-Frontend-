@@ -74,4 +74,5 @@ public class AuthApi extends BaseApi {
                 .when()
                 .post(Routes.RESET_PASSWORD);
     }
+
 }

@@ -22,7 +22,7 @@ public class UploadAvatarAPITest extends BaseTest {
         String accessToken = AuthApi.loginUser(uniqueEmail, password).jsonPath().getString("data.token");
 
         File tempImageFile = File.createTempFile("mock_avatar", ".png");
-        Files.write(tempImageFile.toPath(), new byte[]{1, 2, 3, 4}); // Write fake dummy image bytes
+        Files.write(tempImageFile.toPath(), new byte[]{1, 2, 3, 4});
         tempImageFile.deleteOnExit();
 
         Response uploadResponse = UserApi.uploadAvatar(accessToken, tempImageFile);
