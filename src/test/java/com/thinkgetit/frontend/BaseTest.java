@@ -18,7 +18,6 @@ public class BaseTest {
         playwright = Playwright.create();
         boolean isCI = System.getenv("CI") != null;
 
-        // Runs headlessly on GitHub, but pops open the browser UI locally for you
         browser = playwright.chromium().launch(
                 new BrowserType.LaunchOptions().setHeadless(isCI)  );
                 page = browser.newPage();
